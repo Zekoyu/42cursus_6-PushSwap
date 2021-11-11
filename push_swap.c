@@ -6,7 +6,7 @@
 /*   By: mframbou <mframbou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 16:58:51 by mframbou          #+#    #+#             */
-/*   Updated: 2021/11/11 12:25:59 by mframbou         ###   ########.fr       */
+/*   Updated: 2021/11/11 12:26:43 by mframbou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	main(int argc, char *argv[])
 {
 	t_stacks	stacks;
 
-	if (argc == 1 | !init_both_stacks(&stacks, argc, argv))
+	if (argc == 1 || !init_both_stacks(&stacks, argc, argv))
 		return (EXIT_FAILURE);
 	if (array_is_sorted(stacks.stack_a.values, stacks.stack_a.capacity))
 	{

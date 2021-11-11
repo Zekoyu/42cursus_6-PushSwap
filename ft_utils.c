@@ -6,7 +6,7 @@
 /*   By: mframbou <mframbou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 17:05:36 by mframbou          #+#    #+#             */
-/*   Updated: 2021/11/10 19:56:11 by mframbou         ###   ########.fr       */
+/*   Updated: 2021/11/11 12:20:54 by mframbou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,11 @@ long	ft_atol(char *str)
 		res += str[i] - 48;
 		i++;
 	}
-	if (str[i] && (str[i] < '0' || str[i] > '9' || \
-	res < -2147483648 || res > 2147483647))
+	res *= sign;
+	if ((str[i] && (str[i] < '0' || str[i] > '9')) || \
+	(res < -2147483648 || res > 2147483647))
 		return (999999999999L);
-	return (res * sign);
+	return (res);
 }
 
 int	max(int a, int b)

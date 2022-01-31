@@ -6,22 +6,11 @@
 /*   By: mframbou <mframbou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 16:58:51 by mframbou          #+#    #+#             */
-/*   Updated: 2021/11/11 12:26:43 by mframbou         ###   ########.fr       */
+/*   Updated: 31-01-2022 16:49 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	release_stack_hostages(t_stacks *stacks)
-{
-	t_stack	*a;
-	t_stack	*b;
-
-	a = &stacks->stack_a;
-	b = &stacks->stack_b;
-	free(a->values);
-	free(b->values);
-}
 
 /*
 	‣ Find the value which require the least amount to be pushed to B

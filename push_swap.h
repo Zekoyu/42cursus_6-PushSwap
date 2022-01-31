@@ -6,7 +6,7 @@
 /*   By: mframbou <mframbou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 11:53:38 by mframbou          #+#    #+#             */
-/*   Updated: 2021/11/10 19:55:29 by mframbou         ###   ########.fr       */
+/*   Updated: 31-01-2022 17:22 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ void	sort_3_numbers_or_less(t_stacks *stacks);
 
 // FT Utils
 void	ft_putstr(char *str);
+void	ft_putstr_fd(char *str, int fd);
 char	**ft_split(char const *s, char c);
 long	ft_atol(char *str);
 int		max(int a, int b);
@@ -93,5 +94,8 @@ int		max(int a, int b);
 int		init_both_stacks(t_stacks *stacks, int argc, char *argv[]);
 int		array_has_duplicates(int *array, int array_size);
 int		array_is_sorted(int *array, int array_size);
+int		is_really_num(char *str);
+
+void	release_stack_hostages(t_stacks *stacks);
 
 #endif

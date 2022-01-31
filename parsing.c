@@ -6,7 +6,7 @@
 /*   By: mframbou <mframbou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 14:14:28 by mframbou          #+#    #+#             */
-/*   Updated: 2021/11/11 12:16:48 by mframbou         ###   ########.fr       */
+/*   Updated: 31-01-2022 17:22 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	*parse_list_of_args(char *str_nums[], int argc)
 		while (i >= 0)
 		{
 			val = ft_atol(str_nums[i]);
-			if (val == 999999999999L)
+			if (!is_really_num(str_nums[i]) || val == 999999999999L)
 			{
 				free(res);
 				return (NULL);
@@ -91,7 +91,7 @@ int	init_both_stacks(t_stacks *stacks, int argc, char *argv[])
 	values_b = init_empty_array(argc);
 	if (!values_a || !values_b || array_has_duplicates(values_a, argc))
 	{
-		ft_putstr("Error\n");
+		ft_putstr_fd("Error\n", STDERR_FILENO);
 		free(values_a);
 		free(values_b);
 		return (0);

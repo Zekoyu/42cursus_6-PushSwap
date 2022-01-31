@@ -6,11 +6,22 @@
 /*   By: mframbou <mframbou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 19:52:22 by mframbou          #+#    #+#             */
-/*   Updated: 2021/11/11 11:55:45 by mframbou         ###   ########.fr       */
+/*   Updated: 31-01-2022 16:50 by                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	release_stack_hostages(t_stacks *stacks)
+{
+	t_stack	*a;
+	t_stack	*b;
+
+	a = &stacks->stack_a;
+	b = &stacks->stack_b;
+	free(a->values);
+	free(b->values);
+}
 
 int	get_biggest_val_in_stack(t_stack *stack)
 {
